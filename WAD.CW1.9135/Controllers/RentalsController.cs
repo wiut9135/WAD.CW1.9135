@@ -50,9 +50,7 @@ namespace WAD.CW1._9135.Controllers
 
 			var rental = _mapper.Map<Rental>(rentalDto);
 			_rentalRepository.Add(rental);
-
-			var rentalDtoResult = _mapper.Map<RentalDto>(rental);
-			return CreatedAtAction(nameof(GetRentalById), new { id = rentalDtoResult.Id }, rentalDtoResult);
+			return Ok("Rental have been successfuly created");
 		}
 
 		[HttpPut("{id}")]

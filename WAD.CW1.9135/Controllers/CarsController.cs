@@ -51,8 +51,7 @@ namespace WAD.CW1._9135.Controllers
 			var car = _mapper.Map<Car>(carDto);
 			_carRepository.Add(car);
 
-			var carDtoResult = _mapper.Map<CarDto>(car);
-			return CreatedAtAction(nameof(GetCarById), new { id = carDtoResult.Id }, carDtoResult);
+			return Ok("Car have been added properly");
 		}
 
 		[HttpPut("{id}")]
